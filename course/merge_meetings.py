@@ -33,7 +33,7 @@ def merge_ranges(meetings):
             # Then if it ends later we can can change the current block
             if slot[1] > working_block[1]:
                 working_block[1] = slot[1]
-                condensed_meetings.append(tuple(working_block))    
+                condensed_meetings.append(tuple(working_block))
         elif slot[0] > working_block[1]:
             # We have a non overlapping block
             # Add the old block to results List
