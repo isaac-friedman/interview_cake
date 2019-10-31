@@ -14,8 +14,20 @@ def permutation_palindrome(instring):
         else:
             letter_dict[char] = 1
 
-    print(letter_dict)
-    return
+    # Check that our dictionary has the right number of the right letters
+    unique_chars = 0
+    for i in letter_dict:
+        if letter_dict[i] % 2 == 0:
+            pass
+        elif letter_dict[i] > 1: # The string is assymetrical
+            return False
+        else: # i == 1
+            if unique_chars > 1:
+                return False
+            else:
+                unique_chars += 1
+    return True
 
-text = "a man a plan a canal panama"
-permutation_palindrome(text)
+pass_text = "a man a plan a canal panama"
+fail_text = "adam aint madam"
+print(permutation_palindrome(pass_text))
