@@ -9,10 +9,11 @@ def pair_movies(flight_length, movie_lengths):
     for i in movie_lengths: # O(n)
         ttk = flight_length - i
         if ttk in s: # O(1)
-            return True
+            if ttk != i: # Prevent false positive where the same movie is watched twice
+                return True
     return False
 
 flight_length = 120
-movie_lengths = [120, 90, 30, 73]
-
-print(pair_movies(flight_length, movie_lengths))
+movie_lengths_for_false = [120, 90, 301, 73, 60]
+movie_lengths_for_true = [120, 90, 30, 73, 60]
+print(pair_movies(flight_length, movie_lengths_for_true))
