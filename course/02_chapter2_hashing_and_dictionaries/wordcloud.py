@@ -6,7 +6,12 @@ def wordcloud(text):
     text = text.replace("-", " ")
     table = text.maketrans({key: None for key in punctuation})
     text = text.translate(table)
-    print(text)
+    word_list = text.split(" ")
+    cloud = {word:1 for word in set(word_list)}
+    print(cloud)\
+    for i in word_list:
+        cloud[i] += 1
+    return cloud
 
 text = 'After beating the eggs, Dana read the next step-Add milk and eggs, then add flour and sugar.'
-wordcloud(text)
+print(wordcloud(text))
