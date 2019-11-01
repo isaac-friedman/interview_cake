@@ -8,7 +8,7 @@ def wordcloud(text):
     text = text.translate(table)
     word_list = text.split(" ")
     cloud = {word:1 for word in set(word_list)}
-    print(cloud)\
+    print(cloud)
     for i in word_list:
         cloud[i] += 1
     return cloud
