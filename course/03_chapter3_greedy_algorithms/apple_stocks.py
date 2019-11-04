@@ -7,14 +7,14 @@ Constraint: You have to buy before you can sell
 """
 
 def get_max_profit(stock_prices):
-    current_spread = 0
-    for bottom in range(len(stock_prices)):
-        later = stock_prices[bottom:]
-        print(later)
-        for top in later:
-            if top - stock_prices[bottom] > current_spread:
-                current_spread = top - stock_prices[bottom]
-    return current_spread
+    min_price = stock_prices[0]
+    max_profit = stock_prices[1]-stock_prices[0]
+    for price in stock_prices:
+        if (price - min_price) > max_profit:
+            max_profit = (price - min_price)
+        if price < min_price:
+            min_price = price
+    return max_profit
 
 
 stock_prices = [10, 7, 5, 8, 11, 9]
