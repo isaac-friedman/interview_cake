@@ -1,14 +1,11 @@
 def product_of_all_other_ints(input_list):
-    print("This is horribly inefficient and is only for illustrative purposes.")
     output_list = []
-    for i in range(len(input_list)):
-        tmp = 1
-        for j in range(len(input_list)):
-            if j != i:
-                tmp *= input_list[j]
-            else:
-                pass
-        output_list.append(tmp)
+    master_multiple = 1
+    for i in input_list:
+        master_multiple *= i
+    print(master_multiple)
+    for i in input_list:
+        output_list.append(master_multiple/i)
     return output_list
 
 
