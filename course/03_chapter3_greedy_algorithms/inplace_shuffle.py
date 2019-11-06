@@ -4,6 +4,7 @@ def get_rand(ceiling):
     return randrange(0, ceiling+1)
 
 def inplace_shuffle(input_list):
+    # Value in input_list is the key, new location is the value
     output_dict = {key:None for key in input_list}
     got_rand = 0
     for i in input_list:
